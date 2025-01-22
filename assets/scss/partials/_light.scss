@@ -1,0 +1,73 @@
+body.light-theme {
+  header {
+    img {
+      filter: invert(0.2);
+    }
+  }
+
+  aside {
+    .sidebar {
+      .center-bar {
+        .songList {
+          li:hover {
+            background-color: lighten($color: #dcdcdc, $amount: 3%);
+          }
+          li.active {
+            background-color: var(--current-950);
+          }
+        }
+      }
+      .center-bar::before {
+        position: absolute;
+        content: "";
+        width: calc(100% - 12px);
+        left: 0;
+        top: 0;
+        height: 10%;
+        background: linear-gradient(
+          to bottom,
+          rgba(22, 22, 22, 0.05),
+          transparent 70%
+        );
+      }
+      .center-bar::after {
+        position: absolute;
+        content: "";
+        width: calc(100% - 12px);
+        height: 10%;
+        left: 0;
+        bottom: 0;
+        background: linear-gradient(
+          to top,
+          rgba(22, 22, 22, 0.05),
+          transparent
+        );
+      }
+    }
+  }
+
+  main {
+    .main-section .albums .spotifyPlaylists .album-card.card {
+      border: 1px solid var(--current-1050);
+    }
+    .playbar {
+      background-color: rgba(255, 255, 255, 0.7);
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+      border: 1px solid rgba(0, 0, 0, 0.2);
+
+      .playbar_inner {
+        .player_box {
+          .pb_inner {
+            color: #000000;
+
+            #playPause {
+              img {
+                filter: invert(1);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

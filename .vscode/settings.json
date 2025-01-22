@@ -1,0 +1,11 @@
+{
+  "liveSassCompile.settings.formats": [
+    {
+      "format": "expanded",
+      "extensionName": ".css",
+      "savePath": "assets/css" // Save the compiled CSS in the sibling css folder
+    }
+  ],
+  "liveSassCompile.settings.generateMap": true, // Enable source map
+  "liveSassCompile.settings.excludeList": ["**/node_modules/**", ".vscode/**"]
+}

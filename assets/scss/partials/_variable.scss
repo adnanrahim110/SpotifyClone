@@ -1,0 +1,72 @@
+$dark: (
+  50: #f6f6f6,
+  100: #e7e7e7,
+  200: #d1d1d1,
+  300: #b0b0b0,
+  400: #888888,
+  500: #6d6d6d,
+  600: #5d5d5d,
+  700: #4f4f4f,
+  800: #454545,
+  900: #3d3d3d,
+  950: #262626,
+  1000: #1f1f1f,
+  1050: #161616,
+  1100: #0f0f0f,
+);
+$light: (
+  50: #161616,
+  100: #1f1f1f,
+  200: #262626,
+  300: #3d3d3d,
+  400: #454545,
+  500: #4f4f4f,
+  600: #5d5d5d,
+  700: #6d6d6d,
+  800: #888888,
+  900: #b0b0b0,
+  950: #d1d1d1,
+  1000: #dcdcdc,
+  1050: #efefef,
+);
+
+:root {
+  --white: #ffffff;
+  --black: #000000;
+
+  --left-sidebar-width: 344;
+  --panel-gap: 8px;
+
+  @each $key, $value in $dark {
+    --dark-#{$key}: #{$value};
+  }
+  @each $key, $value in $light {
+    --light-#{$key}: #{$value};
+  }
+}
+$primary: #1ed760;
+$primary-hover: #3ae376;
+
+@font-face {
+  font-family: "mixUIregular";
+  src: url("../fonts/SpotifyMixUI-Regular.woff2") format("woff2");
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "mixUItitle";
+  src: url("../fonts/SpotifyMixUITitleVariable.woff2") format("woff2");
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "mixUIbold";
+  src: url("../fonts/SpotifyMixUI-Bold.woff2") format("woff2");
+  font-style: normal;
+}
+
+$fonts: (
+  regular: "mixUIregular",
+  title: "mixUItitle",
+  bold: "mixUIbold",
+);

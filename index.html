@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Spotify - Web Player: Music for everyone</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css"
+    integrity="sha512-yHknP1/AwR+yx26cB1y0cjvQUMvEa2PFzt1c9LlS4pRQ5NOTZFWbhBig+X9G9eYW/8m0/4OXNx8pxJ6z57x0dw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css"
+    integrity="sha512-17EgCFERpgZKcm0j0fEq1YCJuyAWdz9KUtv1EjVuaOz8pDnh/0nZxmU6BBXwaaxqoi9PQXnRWqlcDB027hgv9A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body class="dark-theme">
+
+  <div class="wrapper">
+    <header>
+      <nav class="navbar">
+        <div class="container-fluid pe-0">
+          <div class="logo">
+            <a href="./"><img src="assets/images/svg/logo.svg" alt=""></a>
+            <div class="theme-toggle" id="themeToggle">
+              <label for="toggleSwitch" class="switch">
+                <input id="toggleSwitch" type="checkbox" />
+                <span class="slider"></span>
+                <span class="decoration"></span>
+              </label>
+            </div>
+          </div>
+          <div class="nav-center d-flex gap-2">
+            <div class="home"><img src="assets/images/svg/home.svg" alt=""></div>
+            <div class="search d-none d-md-block">
+              <input type="text" name="" placeholder="What do you want to play?" class="rounded-pill" id="">
+              <a href="#" class="search-icon">
+                <svg data-encore-id="icon" role="img" aria-hidden="true" data-testid="search-icon" viewBox="0 0 24 24">
+                  <path
+                    d="M10.533 1.27893C5.35215 1.27893 1.12598 5.41887 1.12598 10.5579C1.12598 15.697 5.35215 19.8369 10.533 19.8369C12.767 19.8369 14.8235 19.0671 16.4402 17.7794L20.7929 22.132C21.1834 22.5226 21.8166 22.5226 22.2071 22.132C22.5976 21.7415 22.5976 21.1083 22.2071 20.7178L17.8634 16.3741C19.1616 14.7849 19.94 12.7634 19.94 10.5579C19.94 5.41887 15.7138 1.27893 10.533 1.27893ZM3.12598 10.5579C3.12598 6.55226 6.42768 3.27893 10.533 3.27893C14.6383 3.27893 17.94 6.55226 17.94 10.5579C17.94 14.5636 14.6383 17.8369 10.533 17.8369C6.42768 17.8369 3.12598 14.5636 3.12598 10.5579Z">
+                  </path>
+                </svg>
+              </a>
+              <a href="#" class="browse-icon">
+                <svg data-encore-id="icon" role="img" aria-hidden="true" viewBox="0 0 24 24">
+                  <path d="M15 15.5c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2z"></path>
+                  <path
+                    d="M1.513 9.37A1 1 0 0 1 2.291 9h19.418a1 1 0 0 1 .979 1.208l-2.339 11a1 1 0 0 1-.978.792H4.63a1 1 0 0 1-.978-.792l-2.339-11a1 1 0 0 1 .201-.837zM3.525 11l1.913 9h13.123l1.913-9H3.525zM4 2a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v4h-2V3H6v3H4V2z">
+                  </path>
+                </svg>
+              </a>
+            </div>
+          </div>
+          <div class="nav-right">
+            <a href="" class="btn signupbtn">Sign up</a>
+            <a href="" class="btn loginbtn rounded-pill">Log in</a>
+            <div class="hamburger d-block d-md-none">
+              <div id="menuToggle">
+                <input id="checkbox" type="checkbox">
+                <label class="toggle" for="checkbox">
+                  <div class="bar bar--top"></div>
+                  <div class="bar bar--middle"></div>
+                  <div class="bar bar--bottom"></div>
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <aside>
+      <nav class="sidebar" id="sidebar">
+        <div class="top-bar">
+          <h5 class="title">
+            <span>
+              <svg data-encore-id="icon" role="img" aria-hidden="true" viewBox="0 0 24 24">
+                <path
+                  d="M3 22a1 1 0 0 1-1-1V3a1 1 0 0 1 2 0v18a1 1 0 0 1-1 1zM15.5 2.134A1 1 0 0 0 14 3v18a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V6.464a1 1 0 0 0-.5-.866l-6-3.464zM9 2a1 1 0 0 0-1 1v18a1 1 0 1 0 2 0V3a1 1 0 0 0-1-1z">
+                </path>
+              </svg>
+            </span>
+            Current Album
+          </h5>
+          <p id="currentAlbum"></p>
+        </div>
+        <div class="center-bar">
+          <div class="songList">
+            <ul></ul>
+          </div>
+        </div>
+        <div class="bottom-bar">
+          <div class="legal-links">
+            <div class="btm-links_list">
+              <div class="link-item">
+                <a href="#"><span>Legal</span></a>
+              </div>
+              <div class="link-item">
+                <a href="#"><span>Safety & Privacy Center</span></a>
+              </div>
+              <div class="link-item">
+                <a href="#"><span>Privacy Policy</span></a>
+              </div>
+              <div class="link-item">
+                <a href="#"><span>Cookies</span></a>
+              </div>
+              <div class="link-item">
+                <a href="#"><span>About Ads</span></a>
+              </div>
+              <div class="link-item">
+                <a href="#"><span>Accessibility</span></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </aside>
+    <main>
+      <section class="main-section">
+        <div class="albums h-100">
+          <div class="playlists h-100 rounded-3 overflow-hidden">
+            <div class="spotifyPlaylists px-1">
+              <div class="container-fluid container-md h-100">
+                <div class="row">
+                  <div class="col-12 col-lg-6">
+                    <h1 class="title">Popular artists</h1>
+                  </div>
+                  <div class="col-12 col-md-12 col-lg-12 ps-0">
+                    <div class="popular_artists bg-transparent">
+                      <div class="pa_inner bg-transparent"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-12 col-lg-6">
+                    <h1 class="title">Popular albums and singles</h1>
+                  </div>
+                </div>
+                <div class="cardContainer row justify-content-start">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="playbar">
+          <div class="playbar_inner">
+            <div class="player_box">
+              <div class="pb_inner">
+                <p class="songinfo"></p>
+                <div class="playBtns">
+                  <svg id="prev" viewBox="0 0 24 24" width="24" height="24" color="#000000" fill="none">
+                    <path
+                      d="M8.06492 12.6258C8.31931 13.8374 9.67295 14.7077 12.3802 16.4481C15.3247 18.3411 16.797 19.2876 17.9895 18.9229C18.3934 18.7994 18.7654 18.5823 19.0777 18.2876C20 17.4178 20 15.6118 20 12C20 8.38816 20 6.58224 19.0777 5.71235C18.7654 5.41773 18.3934 5.20057 17.9895 5.07707C16.797 4.71243 15.3247 5.6589 12.3802 7.55186C9.67295 9.29233 8.31931 10.1626 8.06492 11.3742C7.97836 11.7865 7.97836 12.2135 8.06492 12.6258Z"
+                      stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" />
+                    <path d="M4 4L4 20" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+                  </svg>
+                  <div id="playPause">
+                    <img id="play" src="assets/images/svg/play.svg" alt="">
+                  </div>
+                  <svg id="next" viewBox="0 0 24 24" width="24" height="24" color="#000000" fill="none">
+                    <path
+                      d="M15.9351 12.6258C15.6807 13.8374 14.327 14.7077 11.6198 16.4481C8.67528 18.3411 7.20303 19.2876 6.01052 18.9229C5.60662 18.7994 5.23463 18.5823 4.92227 18.2876C4 17.4178 4 15.6118 4 12C4 8.38816 4 6.58224 4.92227 5.71235C5.23463 5.41773 5.60662 5.20057 6.01052 5.07707C7.20304 4.71243 8.67528 5.6589 11.6198 7.55186C14.327 9.29233 15.6807 10.1626 15.9351 11.3742C16.0216 11.7865 16.0216 12.2135 15.9351 12.6258Z"
+                      stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" />
+                    <path d="M20 5V19" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+                  </svg>
+                </div>
+                <div class="time-vol">
+                  <p class="songtime"></p>
+                  <div class="volume">
+                    <svg id="volImg" viewBox="0 0 24 24" width="24" height="24" color="#000000" fill="none">
+                      <path
+                        d="M14 14.8135V9.18646C14 6.04126 14 4.46866 13.0747 4.0773C12.1494 3.68593 11.0603 4.79793 8.88232 7.02192C7.75439 8.17365 7.11085 8.42869 5.50604 8.42869C4.10257 8.42869 3.40084 8.42869 2.89675 8.77262C1.85035 9.48655 2.00852 10.882 2.00852 12C2.00852 13.118 1.85035 14.5134 2.89675 15.2274C3.40084 15.5713 4.10257 15.5713 5.50604 15.5713C7.11085 15.5713 7.75439 15.8264 8.88232 16.9781C11.0603 19.2021 12.1494 20.3141 13.0747 19.9227C14 19.5313 14 17.9587 14 14.8135Z"
+                        stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                      <path d="M17 9C17.6254 9.81968 18 10.8634 18 12C18 13.1366 17.6254 14.1803 17 15"
+                        stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                      <path d="M20 7C21.2508 8.36613 22 10.1057 22 12C22 13.8943 21.2508 15.6339 20 17"
+                        stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                    <div class="range">
+                      <input type="range" id="volRange">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="seekbar_outer">
+              <div class="seekbar">
+                <div class="circle"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="assets/js/bootstrap.bundle.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+  <script src="assets/js/script.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"
+    integrity="sha512-HGOnQO9+SP1V92SrtZfjqxxtLmVzqZpjFFekvzZVWoiASSQgSr4cw9Kqd2+l8Llp4Gm0G8GIFJ4ddwZilcdb8A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <script>
+
+  </script>
+</body>
+
+</html>

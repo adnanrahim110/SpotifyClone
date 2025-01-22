@@ -1,0 +1,31 @@
+<svg version="1.1" id="svg4725" xml:space="preserve" width="682.66669" height="682.66669"
+  viewBox="0 0 682.66669 682.66669" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
+  <defs id="defs4729">
+    <clipPath clipPathUnits="userSpaceOnUse" id="clipPath4739">
+      <path d="M 0,512 H 512 V 0 H 0 Z" id="path4737" />
+    </clipPath>
+  </defs>
+  <g id="g4731" transform="matrix(1.3333333,0,0,-1.3333333,0,682.66667)">
+    <g id="g4733">
+      <g id="g4735" clip-path="url(#clipPath4739)">
+        <g id="g4741" transform="translate(451.0498,60.9502)">
+          <path
+            d="m 0,0 c -71.268,-71.267 -318.832,-71.267 -390.1,0 -71.266,71.268 -71.266,318.832 0,390.1 17.173,17.171 44.58,30.206 77.291,39.103"
+            style="fill:none;stroke:#000000;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+            id="path4743" />
+        </g>
+        <g id="g4745" transform="translate(172.6055,497.6816)">
+          <path d="m 0,0 c 100.545,17.272 230.084,1.729 278.444,-46.632 64.104,-64.104 70.547,-270.847 19.329,-363.624"
+            style="fill:none;stroke:#000000;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+            id="path4747" />
+        </g>
+        <g id="g4749" transform="translate(186.1807,231.3311)">
+          <path
+            d="m 0,0 v 131.041 c 0,11.73 12.856,18.921 22.851,12.781 L 196.02,37.45 c 9.531,-5.855 9.531,-19.707 0,-25.562 L 22.851,-94.484 C 12.856,-100.624 0,-93.433 0,-81.703 V -30"
+            style="fill:none;stroke:#000000;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+            id="path4751" />
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

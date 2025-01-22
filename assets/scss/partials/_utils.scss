@@ -1,0 +1,39 @@
+@function get-color($level) {
+  @return map-get($dark, $level);
+}
+
+$light-theme: (
+  background: #fff,
+  text: get-color(900),
+  accent: lighten(get-color(600), 20%),
+);
+
+$dark-theme: (
+  background: #000,
+  text: get-color(100),
+  accent: darken(get-color(400), 20%),
+);
+
+// Mixin to apply theme styles
+@mixin apply-theme($theme) {
+  background-color: map-get($theme, background);
+  color: map-get($theme, text);
+  a {
+    color: map-get($theme, accent);
+  }
+}
+
+// @function lighten-shade($color, $factor) {
+//   @return mix(white, $color, $factor);
+// }
+
+// $light: ();
+// @each $key, $value in $dark {
+//   $factor: $key / 000 * 100%;
+//   $light: map-merge(
+//     $light,
+//     (
+//       $key: lighten-shade($value, $factor),
+//     )
+//   );
+// }

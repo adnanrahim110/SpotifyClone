@@ -1,0 +1,172 @@
+aside {
+  grid-area: left-sidebar;
+  transition: all 0.5s ease;
+
+  .sidebar {
+    background-color: var(--current-1050);
+    border: 1px solid var(--current-1050);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: var(--panel-gap);
+
+    svg {
+      fill: var(--current-300);
+    }
+
+    .top-bar {
+      padding: 12px 10px 8px;
+      display: flex;
+      align-items: start;
+      justify-content: center;
+      flex-direction: column;
+      height: 70px;
+
+      h5 {
+        padding: 4px 0 0;
+        display: flex;
+        align-items: end;
+        gap: 10px;
+      }
+
+      #currentAlbum {
+        padding-left: 25px;
+        font-size: 12px;
+        font-family: map-get($fonts, title);
+        letter-spacing: 1px;
+        color: $primary;
+      }
+    }
+
+    .center-bar {
+      position: relative;
+
+      .songList {
+        height: calc(100vh - 66px - 112px - 71px - (var(--panel-gap) * 4));
+        background-color: var(--current-1100);
+        overflow-y: auto;
+
+        ul {
+          margin: 20px 12px 20px 0;
+          li {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            max-height: 50px;
+            border: 1px solid var(--current-1000);
+            margin-bottom: 10px;
+            transition: all 0.2s linear;
+            cursor: pointer;
+            position: relative;
+            z-index: 2;
+
+            img {
+              width: 25px;
+              height: 25px;
+            }
+
+            .info {
+              width: 100%;
+              padding: 0 5px;
+
+              .songName {
+                font-size: 14px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                line-height: 1;
+              }
+
+              .artist {
+                font-size: 12px;
+                color: var(--current-400);
+              }
+            }
+
+            .playnow {
+              display: flex;
+              align-items: center;
+              justify-content: end;
+              font-size: 12px;
+
+              img {
+                filter: invert(0.6);
+              }
+            }
+          }
+          li:hover {
+            background-color: var(--current-1050);
+          }
+          li.active {
+            background-color: var(--current-950);
+          }
+        }
+      }
+
+      .songList::-webkit-scrollbar {
+        width: 12px;
+      }
+
+      .songList::-webkit-scrollbar-track {
+        background: var(--current-1100);
+      }
+
+      .songList::-webkit-scrollbar-thumb {
+        background: var(--current-800);
+      }
+
+      img {
+        width: 24px;
+        height: 24px;
+      }
+    }
+    .center-bar::before {
+      position: absolute;
+      content: "";
+      width: calc(100% - 12px);
+      left: 0;
+      top: 0;
+      height: 10%;
+      background: linear-gradient(
+        to bottom,
+        rgba(22, 22, 22, 0.1),
+        transparent 70%
+      );
+    }
+    .center-bar::after {
+      position: absolute;
+      content: "";
+      width: calc(100% - 12px);
+      height: 10%;
+      left: 0;
+      bottom: 0;
+      background: linear-gradient(to top, rgba(22, 22, 22, 0.1), transparent);
+    }
+
+    .bottom-bar {
+      height: 112px;
+
+      .legal-links {
+        margin: 32px 0;
+        padding: 0 16px;
+        text-align: start;
+
+        .btm-links_list {
+          display: flex;
+          flex-wrap: wrap;
+          max-width: 300px;
+
+          .link-item {
+            margin-right: 16px;
+
+            a {
+              font-size: 12px;
+              color: var(--current-300);
+            }
+          }
+        }
+      }
+    }
+  }
+}
