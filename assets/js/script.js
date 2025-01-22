@@ -18,7 +18,7 @@ function secsToMinSecs(seconds) {
 }
 
 async function getAlbums() {
-  let artistList = await fetch(`http://127.0.0.1:5500/assets/songs/`);
+  let artistList = await fetch(`https://spotifywebmusicplayer.netlify.app/assets/songs/`);
   let response = await artistList.text();
   let div = document.createElement('div');
   div.innerHTML = response;
@@ -29,7 +29,7 @@ async function getAlbums() {
     const e = artistArray[el];
     if (e.href.includes("/songs/")) {
       let folder = e.href.split("/").slice(-1)[0];
-      let a = await fetch(`http://127.0.0.1:5500/assets/songs/${folder}/info.json`);
+      let a = await fetch(`https://spotifywebmusicplayer.netlify.app/assets/songs/${folder}/info.json`);
       let response = await a.json();
       albumContainer.innerHTML = albumContainer.innerHTML + `
       <div>
@@ -98,7 +98,7 @@ async function getAlbums() {
 }
 async function getSongs(folder) {
   currentFolder = folder;
-  let songList = await fetch(`http://127.0.0.1:5500/assets/songs/${currentArtist}/albums/${folder}/`);
+  let songList = await fetch(`https://spotifywebmusicplayer.netlify.app/assets/songs/${currentArtist}/albums/${folder}/`);
   let response = await songList.text();
   let div = document.createElement('div');
   div.innerHTML = response;
@@ -164,7 +164,7 @@ const playMusic = (track, pause = false) => {
 
 async function displayAlbums(artist) {
   currentArtist = artist;
-  let as = await fetch(`http://127.0.0.1:5500/assets/songs/${artist}/albums/`);
+  let as = await fetch(`https://spotifywebmusicplayer.netlify.app/assets/songs/${artist}/albums/`);
   let albumresponse = await as.text();
   let album_div = document.createElement("div");
   album_div.innerHTML = albumresponse;
@@ -176,7 +176,7 @@ async function displayAlbums(artist) {
     const e = array[index];
     if (e.href.includes(`/albums/`)) {
       let albumfolder = e.href.split('/').pop();
-      let a = await fetch(`http://127.0.0.1:5500/assets/songs/${artist}/albums/${albumfolder}/info.json`);
+      let a = await fetch(`https://spotifywebmusicplayer.netlify.app/assets/songs/${artist}/albums/${albumfolder}/info.json`);
       let response_a = await a.json();
       cardContainer.innerHTML = cardContainer.innerHTML + `
         <div class="col-12 col-sm-4 col-md-4 col-lg-3 mb-3 px-0">
